@@ -1,4 +1,4 @@
-Usage Example
+# Usage Example
 ```
 use std::net::SocketAddr;
 use dashie_rs::shared_global::SharedGlobal;
@@ -51,3 +51,12 @@ fn main() {
     app.run(addr, 4);
 }
 ```
+# Future work
+## Dependency work
+Hyper 0.14 is required to use this library. Not only is it out of date, it's also a leaked abstraction. A function owned by the library that wraps responses would be useful here.
+
+## Middleware
+Currently, middleware is not supported. Ideally, we'd have a way to plug in middleware functions that can be invoked before or after the handler to deal with things like CORS, compression, etc.
+
+## Error handling
+We support a basic 404 page, but we don't have any support for custom 404 pages or indeed any other kind of error handling.
